@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://btcthq7rt3tgf"]
+
+[ext_resource type="Script" uid="uid://biikyi5j4usly" path="res://pve/death_screen.gd" id="1_vvgm0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mvvi4"]
+bg_color = Color(0, 0, 0, 0.65098)
+
+[node name="death_screen" type="Node2D"]
+script = ExtResource("1_vvgm0")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1272.0
+offset_top = -707.0
+offset_right = 1273.0
+offset_bottom = 707.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mvvi4")
+
+[node name="you_won" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -747.0
+offset_top = -501.0
+offset_right = 749.0
+offset_bottom = -92.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 300
+text = "YOU DIED!"
+horizontal_alignment = 1
+
+[node name="restart" type="Button" parent="."]
+process_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -685.0
+offset_top = 253.0
+offset_right = -57.0
+offset_bottom = 397.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 70
+text = "Restart"
+
+[node name="quit" type="Button" parent="."]
+process_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 51.0
+offset_top = 253.0
+offset_right = 679.0
+offset_bottom = 397.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 70
+text = "Quit"
+
+[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

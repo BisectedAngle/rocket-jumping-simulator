@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dotjj676lbikq"]
+
+[ext_resource type="Texture2D" uid="uid://c51vedencl5je" path="res://assets/250px-Rocket_launcher.png" id="1_mm0yg"]
+[ext_resource type="Script" uid="uid://bflhkaaloobap" path="res://main_scenes/main_scripts/rocket_launcher.gd" id="1_vlcf2"]
+
+[node name="rocket launcher" type="Node2D"]
+script = ExtResource("1_vlcf2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -2.38419e-07)
+rotation = 0.610865
+scale = Vector2(0.288916, 0.288916)
+texture = ExtResource("1_mm0yg")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(44, 1)

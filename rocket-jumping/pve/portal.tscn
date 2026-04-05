@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://5kciyxda580g"]
+
+[ext_resource type="Texture2D" uid="uid://b0mb15i2p0djg" path="res://assets/portal.png" id="1_0r486"]
+[ext_resource type="Script" uid="uid://3l62jqp01axt" path="res://pve/portal.gd" id="1_ef3v5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0r486"]
+radius = 85.8971
+
+[node name="portal" type="Area2D"]
+script = ExtResource("1_ef3v5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.289028, 0.289028)
+texture = ExtResource("1_0r486")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.15877)
+scale = Vector2(0.423387, 0.423387)
+shape = SubResource("CircleShape2D_0r486")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-79, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

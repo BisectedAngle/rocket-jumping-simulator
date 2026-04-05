@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxvytie2vpcov"]
+
+[ext_resource type="Script" uid="uid://jxcxhft4faib" path="res://main_scenes/main_scripts/explosion.gd" id="1_nfeox"]
+[ext_resource type="Texture2D" uid="uid://c3u5h1e88nxj0" path="res://assets/orange_explosion_star.png" id="2_e1lii"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7rj46"]
+radius = 27.0
+
+[node name="explosion" type="Area2D"]
+script = ExtResource("1_nfeox")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.179094, 0.179094)
+texture = ExtResource("2_e1lii")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7rj46")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+autostart = true

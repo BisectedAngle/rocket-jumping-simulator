@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://dte5hl1mffpcl"]
+
+[ext_resource type="Script" uid="uid://b6jek6fe4kfpt" path="res://main_scenes/main_scripts/player1.gd" id="1_3vyb7"]
+[ext_resource type="PackedScene" uid="uid://dotjj676lbikq" path="res://main_scenes/rocket_launcher.tscn" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://rjatl8uogovq" path="res://assets/peter.png" id="3_3aohb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lpy58"]
+bg_color = Color(0.161378, 0.660772, 3.85046e-07, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="Gradient" id="Gradient_lpy58"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3vyb7"]
+gradient = SubResource("Gradient_lpy58")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vyb7"]
+size = Vector2(32, 48.75)
+
+[node name="player1" type="CharacterBody2D"]
+script = ExtResource("1_3vyb7")
+
+[node name="health_bar" type="ProgressBar" parent="."]
+offset_left = -41.0
+offset_top = -45.0
+offset_right = 40.0
+offset_bottom = -36.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_lpy58")
+max_value = 150.0
+step = 1.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="health_label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -68.0
+offset_right = 21.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "??"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -0.351167)
+scale = Vector2(0.5, 0.760974)
+texture = SubResource("GradientTexture2D_3vyb7")
+
+[node name="Peter" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -6)
+scale = Vector2(0.226721, 0.226721)
+texture = ExtResource("3_3aohb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.375)
+shape = SubResource("RectangleShape2D_3vyb7")
+
+[node name="rocket_launcher" parent="." instance=ExtResource("2_g2els")]
+position = Vector2(0, -3)
+
+[node name="rocketCooldown" type="Timer" parent="rocket_launcher"]
+wait_time = 0.5
+one_shot = true

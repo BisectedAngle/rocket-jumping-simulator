@@ -1,0 +1,154 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi4fqu28wk5c5"]
+
+[ext_resource type="Script" uid="uid://didisysjsctch" path="res://pve/pve_win_screen.gd" id="1_0wqcv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_krdrs"]
+bg_color = Color(0, 0, 0, 0.65098)
+
+[node name="pve_1_win_screen" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_0wqcv")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1272.0
+offset_top = -707.0
+offset_right = 1273.0
+offset_bottom = 707.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_krdrs")
+
+[node name="you_won" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -258.0
+offset_top = -519.0
+offset_right = 259.0
+offset_bottom = -382.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "YOU WON!"
+horizontal_alignment = 1
+
+[node name="stats_text" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -616.0
+offset_top = -162.0
+offset_right = 612.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "Walkers killed			Jumpers killed
+
+
+
+Time taken			Healing used		Rockets shot"
+horizontal_alignment = 1
+
+[node name="walkers_killed" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -363.0
+offset_top = -273.0
+offset_right = -70.0
+offset_bottom = -163.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.133333, 0.780392, 0.0470588, 1)
+theme_override_font_sizes/font_size = 80
+text = "???"
+horizontal_alignment = 1
+
+[node name="jumpers_killed" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 78.0
+offset_top = -283.0
+offset_right = 371.0
+offset_bottom = -173.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.731192, 0.368363, 0.979155, 1)
+theme_override_font_sizes/font_size = 80
+text = "???"
+horizontal_alignment = 1
+
+[node name="time_taken" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -593.0
+offset_top = 1.0
+offset_right = -300.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.898039, 0.129412, 1)
+theme_override_font_sizes/font_size = 80
+text = "???"
+horizontal_alignment = 1
+
+[node name="healing_used" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_right = 146.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "???"
+horizontal_alignment = 1
+
+[node name="rockets_shot" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 269.0
+offset_top = 1.0
+offset_right = 562.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.568973, 0.568973, 0.568973, 1)
+theme_override_font_sizes/font_size = 80
+text = "???"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -795.0
+offset_top = 325.0
+offset_right = 811.0
+offset_bottom = 556.0
+theme_override_font_sizes/normal_font_size = 70
+text = "Press [SPACE] to go to next level
+Press [ESC] to replay this level"
+horizontal_alignment = 1

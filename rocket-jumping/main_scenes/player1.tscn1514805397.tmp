@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dte5hl1mffpcl"]
+
+[ext_resource type="Script" uid="uid://b6jek6fe4kfpt" path="res://scripts/player1.gd" id="1_3vyb7"]
+[ext_resource type="PackedScene" uid="uid://dotjj676lbikq" path="res://scenes/rocket_launcher.tscn" id="2_g2els"]
+
+[sub_resource type="Gradient" id="Gradient_qir2g"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3vyb7"]
+gradient = SubResource("Gradient_qir2g")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vyb7"]
+size = Vector2(32, 48.75)
+
+[node name="player1" type="CharacterBody2D"]
+script = ExtResource("1_3vyb7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -0.351167)
+scale = Vector2(0.5, 0.760974)
+texture = SubResource("GradientTexture2D_3vyb7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.375)
+shape = SubResource("RectangleShape2D_3vyb7")
+
+[node name="rocket launcher" parent="." instance=ExtResource("2_g2els")]
+position = Vector2(0, -3)
+
+[node name="rocketCooldown" type="Timer" parent="rocket launcher"]
+wait_time = 0.5
+one_shot = true

@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4tmpk8r7bhiy"]
+
+[ext_resource type="Script" uid="uid://bba3ku8po1a1j" path="res://pve/damage_number.gd" id="1_fprn8"]
+
+[node name="damage_number" type="Label"]
+offset_left = -22.0
+offset_top = -22.0
+offset_right = 24.0
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "???"
+horizontal_alignment = 1
+script = ExtResource("1_fprn8")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

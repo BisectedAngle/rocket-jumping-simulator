@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://2b2t4bfdel5s"]
+
+[ext_resource type="Script" uid="uid://2jhhx128nte2" path="res://pve/enemies/jumper.gd" id="1_m8fc3"]
+[ext_resource type="Texture2D" uid="uid://e5amoi4jbpy8" path="res://assets/brian.png" id="2_qciug"]
+
+[sub_resource type="Gradient" id="Gradient_qciug"]
+colors = PackedColorArray(0.607843, 0.121569, 0.870588, 1, 0.607843, 0.121569, 0.870588, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k5mjm"]
+gradient = SubResource("Gradient_qciug")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cq7ej"]
+size = Vector2(32, 49)
+
+[node name="jumper" type="CharacterBody2D"]
+script = ExtResource("1_m8fc3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -0.351167)
+scale = Vector2(0.5, 0.760974)
+texture = SubResource("GradientTexture2D_k5mjm")
+
+[node name="Brian" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -7)
+scale = Vector2(0.211694, 0.211694)
+texture = ExtResource("2_qciug")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_cq7ej")
+
+[node name="flip_timer" type="Timer" parent="."]
+autostart = true
+
+[node name="jump_timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="collision_cloud_timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="flip_timer" to="." method="_on_flip_timer_timeout"]
+[connection signal="timeout" from="jump_timer" to="." method="_on_jump_timer_timeout"]
+[connection signal="timeout" from="collision_cloud_timer" to="." method="_on_collision_cloud_timer_timeout"]
